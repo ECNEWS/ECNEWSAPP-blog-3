@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
@@ -17,31 +17,65 @@
       font-weight: bold;
       z-index: 1000;
     }
-
-    body {
-      font-family: sans-serif;
-      /* बाकी स्टाइल */
+    #blogNameInputBox {
+      position: absolute;
+      top: 50px;
+      right: 10px;
+      background: #ffffff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    #blogNameInput {
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #saveBlogNameBtn {
+      margin-left: 5px;
+      background: #004c8c;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div id="blogCornerName">
-    ✍️ ब्लॉग नाम लोड हो रहा है...
-  </div>
 
-  <!-- आपका बाकी ब्लॉग पेज -->
+<!-- कोने में नाम दिखाने वाला डिब्बा -->
+<div id="blogCornerName">✍️ नाम नहीं मिला</div>
 
-  <script>
-    const blogName = localStorage.getItem("blogName");
-    const cornerDiv = document.getElementById("blogCornerName");
-    if (blogName) {
-      cornerDiv.textContent = "✍️ " + blogName;
+<!-- ब्लॉग नाम इनपुट और सेव बटन -->
+<div id="blogNameInputBox">
+  <input type="text" id="blogNameInput" placeholder="ब्लॉग पोस्ट नाम">
+  <button id="saveBlogNameBtn">सेव करें</button>
+</div>
+
+<script>
+  // पहले से सेव नाम दिखाओ
+  const savedName = localStorage.getItem("blogName");
+  if (savedName) {
+    document.getElementById("blogCornerName").textContent = "✍️ " + savedName;
+  }
+
+  // सेव बटन क्लिक पर नाम सेव करो
+  document.getElementById("saveBlogNameBtn").addEventListener("click", () => {
+    const name = document.getElementById("blogNameInput").value.trim();
+    if (name !== "") {
+      localStorage.setItem("blogName", name);
+      document.getElementById("blogCornerName").textContent = "✍️ " + name;
+      alert("ब्लॉग नाम सेव हो गया ✅");
     } else {
-      cornerDiv.textContent = "✍️ नाम नहीं मिला";
+      alert("कृपया एक नाम दर्ज करें");
     }
-  </script>
+  });
+</script>
+
 </body>
 </html>
+
      {
       font-family: 'Arial', sans-serif;
       background: #f4f4f4;
