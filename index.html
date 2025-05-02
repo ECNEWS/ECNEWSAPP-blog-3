@@ -2,113 +2,71 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EC News - होमपेज</title>
+  <title>EC लेखन पेज</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f1f1f1;
     }
-
-    header {
-      background-color: #00796b;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-
-    .article-box {
-      margin: 80px auto 30px;
-      padding: 20px;
-      width: 80%;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .side-widgets {
+    .sidebar {
       position: fixed;
-      left: 10px;
-      top: 150px;
-      z-index: 100;
-    }
-
-    .section {
-      background-color: #fff;
+      top: 20px;
+      right: 10px;
+      width: 180px;
+      background: #f5f5f5;
       border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 20px;
+      padding: 10px;
+      font-size: 14px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      width: 220px;
+      z-index: 999;
     }
-
-    .section h3 {
-      margin-top: 0;
+    .sidebar h4 {
+      margin-bottom: 8px;
       font-size: 16px;
     }
-
-    .section .button {
-      display: inline-block;
+    .sidebar a {
+      display: block;
       margin: 5px 0;
-      padding: 6px 12px;
-      background-color: #1e88e5;
+      background: #007bff;
       color: white;
-      border-radius: 5px;
       text-decoration: none;
-      font-size: 14px;
+      padding: 4px 6px;
+      border-radius: 5px;
+      font-size: 13px;
     }
-
-    .section .button:hover {
-      background-color: #1565c0;
+    .content {
+      margin: 20px;
+      margin-right: 220px; /* ताकि sidebar से टकराए नहीं */
+    }
+    textarea {
+      width: 100%;
+      height: 400px;
+      font-size: 16px;
+      padding: 10px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>EC News ऐप - लेख और टूल्स एक साथ</h1>
-  </header>
 
-  <!-- Side buttons -->
-  <div class="side-widgets">
-    <div class="section">
-      <h3>🛠️ सुझाव और सुरक्षा</h3>
-      <p><strong>टॉपिक रिसर्च करें:</strong><br>
-        <a href="https://answerthepublic.com/" class="button" target="_blank">🔍 रिसर्च</a>
-      </p>
-      <p><strong>कीवर्ड टूल:</strong><br>
-        <a href="https://neilpatel.com/ubersuggest/" class="button" target="_blank">🔑 Ubersuggest</a>
-      </p>
-      <p><strong>स्पीड और सुरक्षा:</strong><br>
-        <a href="https://pagespeed.web.dev/" class="button" target="_blank">🛡️ PageSpeed Tool</a>
-      </p>
-    </div>
+<div class="sidebar">
+  <h4>🔧 सुझाव और सुरक्षा</h4>
+  <a href="#">🔍 रिसर्च</a>
+  <a href="#">🔑 Ubersuggest</a>
+  <a href="#">🛡️ PageSpeed Tool</a>
 
-    <div class="section">
-      <h3>📊 ब्लॉग मैनेजमेंट और एनालिटिक्स</h3>
-      <p><strong>Google Analytics:</strong><br>
-        <a href="https://analytics.google.com/" class="button" target="_blank">📈 Analytics</a>
-      </p>
-      <p><strong>Comment Feedback:</strong><br>
-        <a href="https://www.commentbox.io/" class="button" target="_blank">💬 CommentBox</a>
-      </p>
-      <p><strong>Templates:</strong><br>
-        <a href="https://colorlib.com/wp/templates/" class="button" target="_blank">🖼️ Colorlib</a>
-      </p>
-      <p><strong>Email Plugin:</strong><br>
-        <a href="https://www.mailchimp.com/" class="button" target="_blank">📧 Mailchimp</a>
-      </p>
-      <p><strong>Themes:</strong><br>
-        <a href="https://themeforest.net/category/blogging" class="button" target="_blank">🎨 ThemeForest</a>
-      </p>
-    </div>
-  </div>
+  <h4 style="margin-top:12px;">📊 ब्लॉग एनालिटिक्स</h4>
+  <a href="#">📈 Analytics</a>
+  <a href="#">💬 CommentBox</a>
+  <a href="#">🖼️ Colorlib</a>
+  <a href="#">📧 Mailchimp</a>
+  <a href="#">🎨 ThemeForest</a>
+</div>
 
-  <!-- Article writing section -->
-  <div class="article-box">
-    <h2>📝 अपना आर्टिकल यहाँ लिखें</h2>
-    <textarea rows="15" style="width:100%; font-size:16px; padding:10px; border-radius:8px; border:1px solid #ccc;"></textarea>
-  </div>
+<div class="content">
+  <h2>✍️ लेख लिखें</h2>
+  <textarea placeholder="यहां अपना आर्टिकल लिखें..."></textarea>
+</div>
+
 </body>
 </html>
