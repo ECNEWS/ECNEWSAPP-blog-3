@@ -1,197 +1,114 @@
 <!DOCTYPE html>
-<html lang="mr">
-
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EC News होमपेज</title>
+  <title>EC News - होमपेज</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f3f4f6;
-      color: #111;
+      background-color: #f1f1f1;
     }
 
     header {
-      background-color: #009688;
+      background-color: #00796b;
       color: white;
       padding: 15px;
       text-align: center;
-      font-size: 1.5em;
     }
 
-    #blogCornerName {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background: #f59e0b;
-      color: white;
-      padding: 8px 12px;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    #blogNameInputBox {
-      margin: 20px auto;
-      max-width: 600px;
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-    }
-
-    #blogNameInput {
-      flex: 1;
-      padding: 10px;
-      font-size: 1em;
-    }
-
-    #saveBlogNameBtn {
-      padding: 10px 20px;
-      background-color: #009688;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    #articleContainer {
-      max-width: 700px;
-      margin: 20px auto;
-      background: white;
+    .article-box {
+      margin: 80px auto 30px;
       padding: 20px;
+      width: 80%;
+      background-color: #ffffff;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    .tools-container {
+    .side-widgets {
       position: fixed;
-      top: 90px;
-      left: 20px;
-      width: 260px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+      left: 10px;
+      top: 150px;
+      z-index: 100;
     }
 
     .section {
-      background: #ffffff;
-      padding: 10px;
+      background-color: #fff;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 220px;
     }
 
-    .section h2 {
-      font-size: 1.1em;
-      margin-bottom: 10px;
+    .section h3 {
+      margin-top: 0;
+      font-size: 16px;
     }
 
-    .section ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .section li {
-      margin-bottom: 10px;
-    }
-
-    .section a.button {
+    .section .button {
       display: inline-block;
-      margin-top: 5px;
-      padding: 5px 10px;
-      background-color: #2563eb;
+      margin: 5px 0;
+      padding: 6px 12px;
+      background-color: #1e88e5;
       color: white;
       border-radius: 5px;
       text-decoration: none;
+      font-size: 14px;
     }
 
-    @media (max-width: 768px) {
-      .tools-container {
-        position: static;
-        width: 100%;
-      }
+    .section .button:hover {
+      background-color: #1565c0;
     }
   </style>
 </head>
-
 <body>
-  <header>📰 EC News - लेखक और पत्रकारों के लिए</header>
+  <header>
+    <h1>EC News ऐप - लेख और टूल्स एक साथ</h1>
+  </header>
 
-  <!-- कोने में नाम दिखाने वाला डिब्बा -->
-  <div id="blogCornerName">✍️ नाम नहीं मिला</div>
-
-  <!-- ब्लॉग नाम इनपुट और सेव बटन -->
-  <div id="blogNameInputBox">
-    <input type="text" id="blogNameInput" placeholder="ब्लॉग पोस्ट नाम">
-    <button id="saveBlogNameBtn">सेव करें</button>
-  </div>
-
-  <!-- लेख/आर्टिकल कंटेनर -->
-  <div id="articleContainer">
-    <h2>📝 आपका आर्टिकल</h2>
-    <textarea rows="15" style="width: 100%; font-size: 1em; padding: 10px; border-radius: 5px; border: 1px solid #ccc;" placeholder="यहाँ अपना लेख लिखें..."></textarea>
-  </div>
-
-  <!-- बाईं ओर सभी टूल्स सेक्शन -->
-  <div class="tools-container">
-    <!-- सुझाव और सुरक्षा -->
+  <!-- Side buttons -->
+  <div class="side-widgets">
     <div class="section">
-      <h2>🔧 सुझाव और सुरक्षा</h2>
-      <ul>
-        <li>टॉपिक रिसर्च करें:<br>
-          <a href="https://answerthepublic.com/" class="button" target="_blank">🔍 रिसर्च</a>
-        </li>
-        <li>कीवर्ड टूल:<br>
-          <a href="https://neilpatel.com/ubersuggest/" class="button" target="_blank">🔑 Ubersuggest</a>
-        </li>
-        <li>स्पीड और सुरक्षा:<br>
-          <a href="https://pagespeed.web.dev/" class="button" target="_blank">🛡️ PageSpeed Tool</a>
-        </li>
-      </ul>
+      <h3>🛠️ सुझाव और सुरक्षा</h3>
+      <p><strong>टॉपिक रिसर्च करें:</strong><br>
+        <a href="https://answerthepublic.com/" class="button" target="_blank">🔍 रिसर्च</a>
+      </p>
+      <p><strong>कीवर्ड टूल:</strong><br>
+        <a href="https://neilpatel.com/ubersuggest/" class="button" target="_blank">🔑 Ubersuggest</a>
+      </p>
+      <p><strong>स्पीड और सुरक्षा:</strong><br>
+        <a href="https://pagespeed.web.dev/" class="button" target="_blank">🛡️ PageSpeed Tool</a>
+      </p>
     </div>
 
-    <!-- ब्लॉग मैनेजमेंट और एनालिटिक्स -->
     <div class="section">
-      <h2>📊 ब्लॉग मैनेजमेंट और एनालिटिक्स</h2>
-      <ul>
-        <li><strong>Google Analytics:</strong><br>
-          <a href="https://analytics.google.com/" class="button" target="_blank">📈 Analytics</a>
-        </li>
-        <li><strong>Comment Feedback:</strong><br>
-          <a href="https://www.commentbox.io/" class="button" target="_blank">💬 CommentBox</a>
-        </li>
-        <li><strong>Templates:</strong><br>
-          <a href="https://colorlib.com/wp/templates/" class="button" target="_blank">🖼️ Colorlib</a>
-        </li>
-        <li><strong>Email Plugin:</strong><br>
-          <a href="https://www.mailchimp.com/" class="button" target="_blank">📧 Mailchimp</a>
-        </li>
-        <li><strong>Themes:</strong><br>
-          <a href="https://themeforest.net/category/blogging" class="button" target="_blank">🎨 ThemeForest</a>
-        </li>
-      </ul>
+      <h3>📊 ब्लॉग मैनेजमेंट और एनालिटिक्स</h3>
+      <p><strong>Google Analytics:</strong><br>
+        <a href="https://analytics.google.com/" class="button" target="_blank">📈 Analytics</a>
+      </p>
+      <p><strong>Comment Feedback:</strong><br>
+        <a href="https://www.commentbox.io/" class="button" target="_blank">💬 CommentBox</a>
+      </p>
+      <p><strong>Templates:</strong><br>
+        <a href="https://colorlib.com/wp/templates/" class="button" target="_blank">🖼️ Colorlib</a>
+      </p>
+      <p><strong>Email Plugin:</strong><br>
+        <a href="https://www.mailchimp.com/" class="button" target="_blank">📧 Mailchimp</a>
+      </p>
+      <p><strong>Themes:</strong><br>
+        <a href="https://themeforest.net/category/blogging" class="button" target="_blank">🎨 ThemeForest</a>
+      </p>
     </div>
   </div>
 
-  <script>
-    const savedName = localStorage.getItem("blogName");
-    if (savedName) {
-      document.getElementById("blogCornerName").textContent = "✍️ " + savedName;
-    }
-
-    document.getElementById("saveBlogNameBtn").addEventListener("click", () => {
-      const name = document.getElementById("blogNameInput").value.trim();
-      if (name !== "") {
-        localStorage.setItem("blogName", name);
-        document.getElementById("blogCornerName").textContent = "✍️ " + name;
-        alert("ब्लॉग नाम सेव हो गया ✅");
-      } else {
-        alert("कृपया एक नाम दर्ज करें");
-      }
-    });
-  </script>
+  <!-- Article writing section -->
+  <div class="article-box">
+    <h2>📝 अपना आर्टिकल यहाँ लिखें</h2>
+    <textarea rows="15" style="width:100%; font-size:16px; padding:10px; border-radius:8px; border:1px solid #ccc;"></textarea>
+  </div>
 </body>
-
 </html>
