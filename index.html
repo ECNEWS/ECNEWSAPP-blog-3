@@ -272,7 +272,19 @@
 <body>
   <div class="sidebar">
     <a href="#" class="new-post"><i class="fas fa-plus"></i> नवीन पोस्ट</a>
-    <a href="#" class="menu-item active"><i class="fas fa-list"></i> पोस्ट</a>
+    <!-- ब्लॉग लिंक -->
+<a href="#" class="menu-item active" onclick="saveMenuClick('ब्लॉग')">
+  <i class="fas fa-list"></i> ब्लॉग
+</a>
+
+<script>
+  function saveMenuClick(name) {
+    // लोकल स्टोरेज में नाम सेव करें
+    localStorage.setItem('lastClicked', name);
+    alert(name + " लिंक सेव हो गया!");
+  }
+</script>
+    
     <a href="#" class="menu-item"><i class="fas fa-chart-bar"></i> आंकड़वारी</a>
     <a href="#" class="menu-item"><i class="fas fa-comment"></i> टिप्पण्या</a>
     <a href="#" class="menu-item"><i class="fas fa-dollar-sign"></i> कमाई</a>
