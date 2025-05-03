@@ -309,9 +309,16 @@
   <textarea id="articleInput" placeholder="यहां अपना आर्टिकल लिखें..."></textarea>
   <button class="save-button" onclick="saveArticle()">सहेजें और प्रदर्शित करें</button>
   
-  <!-- फोटो वीडियो गैलरी बटन -->
-  <button class="gallery-button" onclick="window.open('https://ecnews.github.io/EC-NEWS-blog-4/', '_blank')">📸 फोटो वीडियो गैलरी</button>
-</div>
+  <!-- 📸 फोटो/विडियो गैलरी बटन -->
+<button onclick="document.getElementById('mediaUpload').click()">📸 फोटो/विडियो गैलरी खोलें</button>
+<input type="file" id="mediaUpload" accept="image/*,video/*" multiple style="display:none;" onchange="previewMedia(event)">
+<div id="mediaPreview" style="margin-top: 10px;"></div>
+
+<hr>
+
+<!-- 🎥 विडियो गॅलरी + बटन -->
+<h2>🎥 विडियो गॅलरी +</h2>
+<button onclick="document.getElementById('mediaUpload').click()">📁 विडियो/फोटो जोड़ें</button>
 
   <script>
     // ज़ूम कार्यक्षमता
