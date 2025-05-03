@@ -309,16 +309,32 @@
   <textarea id="articleInput" placeholder="यहां अपना आर्टिकल लिखें..."></textarea>
   <button class="save-button" onclick="saveArticle()">सहेजें और प्रदर्शित करें</button>
   
-  <!-- 📸 फोटो/विडियो गैलरी बटन -->
-<button onclick="document.getElementById('mediaUpload').click()">📸 फोटो/विडियो गैलरी खोलें</button>
+<!-- 📸 फोटो/विडियो गैलरी बटन -->
+<button onclick="document.getElementById('mediaUpload').click()">📸 गैलरी खोलें</button>
 <input type="file" id="mediaUpload" accept="image/*,video/*" multiple style="display:none;" onchange="previewMedia(event)">
 <div id="mediaPreview" style="margin-top: 10px;"></div>
 
-<hr>
+<script>
+function previewMedia(event) {
+    const preview = document.getElementById('mediaPreview');
+    preview.innerHTML = ''; // Clear previous previews
+    const files = event.target.files;
 
-<!-- 🎥 विडियो गॅलरी + बटन -->
-<h2>🎥 विडियो गॅलरी +</h2>
-<button onclick="document.getElementById('mediaUpload').click()">📁 विडियो/फोटो जोड़ें</button>
+    for (let file of files) {
+        const mediaElement = file.type.startsWith('image/') 
+            ? document.createElement('img') 
+            : document.createElement('video');
+        
+        mediaElement.src = URL.createObjectURL(file);
+        mediaElement.style.maxWidth = '200px';
+        mediaElement.style.margin = '5px';
+        if (file.type.startsWith('video/')) {
+            mediaElement.controls = true;
+        }
+        preview.appendChild(mediaElement);
+    }
+}
+</script>
 
   <script>
     // ज़ूम कार्यक्षमता
